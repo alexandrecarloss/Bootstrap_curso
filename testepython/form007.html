@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="<https://pyscript.net/latest/pyscript.css>" />
+
+<script defer src="<https://pyscript.net/latest/pyscript.js>"></script>
+</head>
+<body id="body">
+    <h1>Exemplo de formulário</h1>
+    <form action="cadastro.php" method="post" autocomplete="on">
+        <p>
+            <label for="iest">Estado</label>
+            <select name="estado" id="iest"> 
+                <option value="" selected>---Escolha---</option>
+                <optgroup label="Região Norte">
+                    <option value="AC">Acre</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="PA">Pará</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="TO">Tocantins</option>
+                </optgroup>
+                <optgroup label="Região Nordeste">
+                    <option value="AL">Alagoas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="SE">Sergipe</option>
+                </optgroup>
+                <optgroup label="Região centro-oeste">
+                    <option value="GO">Goiás</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso de Sul</option>
+                </optgroup>
+                <optgroup label="Região Sudeste">
+                    <option value="ES">Espírito Santo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="SP">São Paulo</option>
+                </optgroup>
+                <optgroup label="Região Sul">
+                    <option value="PR">Paraná</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="SC">Santa Catarina</option>
+                </optgroup>
+            </select>
+        </p>
+        <p>
+            <label for="iprof">Profissão</label>
+            <input type="text" name="prof" id="iprof" list="lstprof">
+            <datalist id="lstprof">
+                <option value="ADM">Administrador</option>
+                <option value="CONT">Contabilista</option>
+                <option value="DEV">Desenvolvedor</option>
+                <option value="PROF">Professor</option>
+            </datalist>
+        </p>
+        <p>
+            <label for="imsg">Mensagem: </label><br>
+            <textarea name="msg" id="imsg" cols="30" rows="10"></textarea>
+        </p>
+        <p>
+            <label for="nome">Nome: </label><br>
+            <input type="text" name="nome" id="nome" ></input>
+        </p>
+        <p>
+            <input id="btnenviar" type="button" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+    <div id="terminal" hidden="hidden">
+        <script id="console" type="py" terminal></script>
+    </div>
+    <py-script> print( 'Agora você pode!' ) </py-script>
+    <script>
+        let btn = document.getElementById('btnenviar');
+        let nome = document.getElementById('nome');
+        let body = document.getElementById('body')
+        btn.onclick = function() {
+            alert('aa')
+            var divEl = document.createElement("div")
+            var textEl = document.createTextNode("Meu texto vai aqui")
+            divEl.appendChild(textEl)
+
+document.getElementById("meu_target").appendChild(divEl)
+            body.append();
+             
+        }
+    </script>
+</body>
+</html>
